@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "code": 200,
+  "data": {
+    "coupons": [
+      {
+        "id": "coupon-a",
+        "code": "masked-code-a",
+        "title": "鸡肉汉堡券",
+        "tradeEndDateTime": "2026-10-11 23:59:59",
+        "enable": 1
+      },
+      {
+        "id": "coupon-a",
+        "code": "masked-code-b",
+        "title": "鸡肉汉堡券",
+        "tradeEndDateTime": "2026-10-12 23:59:59",
+        "enable": 1
+      },
+      {
+        "id": "coupon-disabled",
+        "code": "masked-code-c",
+        "title": "不可用券",
+        "tradeEndDateTime": "2026-10-10 23:59:59",
+        "enable": 0
+      }
+    ]
+  }
+}

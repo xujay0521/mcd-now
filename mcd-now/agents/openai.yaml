@@ -1,0 +1,13 @@
+interface:
+  display_name: "趁热麦 McNow"
+  short_description: "记住口味，提醒临期券，核价并在确认后下单"
+  default_prompt: "使用 $mcd-now 检查我的临期优惠券，并按点餐偏好给出建议。"
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "mcd-mcp"
+      description: "麦当劳中国菜单、优惠券、门店、核价与订单能力"
+      transport: "streamable_http"
+      url: "https://mcp.mcd.cn"
+policy:
+  allow_implicit_invocation: true

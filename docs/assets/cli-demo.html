@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>McNow 本地脱敏快照演示</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+      color: #f4f4f5; background: #18181b;
+      font-family: Consolas, "Microsoft YaHei UI", monospace; }
+    main { width: 1160px; padding: 46px; }
+    header { display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 18px; font-family: "Microsoft YaHei UI", sans-serif; }
+    h1 { margin: 0; font-size: 28px; letter-spacing: 0; }
+    .badge { padding: 7px 12px; color: #18181b; background: #ffbc0d;
+      border-radius: 4px; font-weight: 700; }
+    .terminal { overflow: hidden; border: 1px solid #3f3f46;
+      border-radius: 8px; background: #09090b;
+      box-shadow: 0 18px 50px rgb(0 0 0 / 35%); }
+    .bar { padding: 13px 18px; color: #a1a1aa; background: #27272a;
+      font-size: 14px; }
+    pre { min-height: 320px; margin: 0; padding: 28px; white-space: pre-wrap;
+      font-size: 17px; line-height: 1.7; }
+    .prompt { color: #4ade80; }
+    .key { color: #67e8f9; }
+    footer { margin-top: 16px; color: #a1a1aa;
+      font: 14px/1.6 "Microsoft YaHei UI", sans-serif; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>趁热麦 McNow</h1>
+      <span class="badge">本地脱敏快照演示</span>
+    </header>
+    <section class="terminal">
+      <div class="bar">PowerShell - mcd-now</div>
+      <pre><span class="prompt">PS&gt;</span> python mcd-now/scripts/mcd_skill.py coupon-check `
+    --input tests/fixtures/coupons.json --expires-within 3d --format json
+
+{
+  <span class="key">"code"</span>: 200,
+  <span class="key">"message"</span>: "success",
+  <span class="key">"data"</span>: [{
+    <span class="key">"instance_key"</span>: "9d9e944e6c382840896a",
+    <span class="key">"title"</span>: "鸡肉汉堡券",
+    <span class="key">"expires_at"</span>: "2026-10-11T23:59:59+08:00",
+    <span class="key">"hours_left"</span>: 54.09,
+    <span class="key">"enabled"</span>: true
+  }]
+}</pre>
+    </section>
+    <footer>演示数据不含 MCP Token、真实券码、地址、手机号或会员信息。CLI 不连接 MCP，也不执行领券、下单等业务操作。</footer>
+  </main>
+</body>
+</html>
